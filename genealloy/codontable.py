@@ -98,6 +98,44 @@ aa_to_codon_extended = {
 }
 
 
+codon_extended_to_aa = {
+    'GCX': 'A',
+    'RAY': 'B',
+    'TGY': 'C',
+    'GAY': 'D',
+    'GAR': 'E',
+    'TTY': 'F',
+    'GGX': 'G',
+    'CAY': 'H',
+    'ATH': 'I',
+    '-': 'J',
+    'AAR': 'K',
+    'TTR': 'L',
+    'CTX': 'L',
+    'YTR': 'L',
+    'ATG': 'M',
+    'AAY': 'N',
+    '-': 'O',
+    'CCX': 'P',
+    'CAR': 'Q',
+    'CGX': 'R',
+    'AGR': 'R',
+    'MGR': 'R',
+    'TCX': 'S',
+    'AGY': 'S',
+    'ACX': 'T',
+    '-': 'U',
+    'GTX': 'V',
+    'TGG': 'W',
+    'XXX': 'X',
+    'TAY': 'Y',
+    'SAR': 'Z',
+    '-': '.',  # no amino acid (deletion or gap)
+    'TAR': '*',  # STOP codon
+    'TRA': '*',  # STOP codon
+}
+
+
 def generate_swaptable(codon_to_aa, aa_to_codon_extended):
     codon_to_codon_extended = dict()
     for k, v in codon_to_aa.items():

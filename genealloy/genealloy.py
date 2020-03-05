@@ -1,3 +1,12 @@
+try:
+    from Levenshtein import distance
+except ImportError:
+    has_pkgs = False
+else:
+    has_pkgs = True
+
+from .codontable import (codon_to_aa, aa_to_codon_extended, codon_extended_to_aa)
+
 def convert_seq_to_codons(seq):
     seq_codons = [seq[i : i + 3] for i in range(0, len(seq), 3)]
 
@@ -43,3 +52,33 @@ def report_results(index_of_matches):
     print("The number of matching substrings in host is: %d," % len(index_of_matches))
     positions = list(index_of_matches.keys())
     print("at host codon position(s): %s" % positions)
+
+
+def calculate_aa_solutions(seq_codons, index_of_matches):
+    parasite_aa_seq = ''.join(codon_to_aa[c] for c in seq_codons)
+    solutions = dict()
+    solutions['parasite'] = parasite_aa_seq
+    for key, match in index_of_matches.items():
+        solutions[key] = ''
+        for index, codon in enumerate(seq_codons):
+            aa = codon_to_aa[codon]
+            if set(aa_to_codon_extended[aa]) & set(match[index]) != set():
+                solutions[key] += aa
+            else:
+                solutions[key] += codon_extended_to_aa[match[index][0]]  # take the 1st aa
+
+    return solutions
+
+
+def calculate_levenshtein_distances(aa_solutions):
+    if not has_pkgs:
+        raise ImportError("Function requires the python-Levenshtein package.")
+
+    parasite = aa_solutions['parasite']
+    del aa_solutions['parasite']
+
+    levenshtein_distances = dict()
+    for key, aa_seq in aa_solutions.items():
+        levenshtein_distances[key] = distance(parasite, aa_seq)
+
+    return levenshtein_distances
