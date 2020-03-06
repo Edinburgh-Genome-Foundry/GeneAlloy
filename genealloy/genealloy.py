@@ -1,11 +1,9 @@
-try:
-    from Levenshtein import distance
-except ImportError:
-    has_pkgs = False
-else:
-    has_pkgs = True
-
-from .codontable import codon_to_aa, aa_to_codon_extended, codon_extended_to_aa
+from .codontable import (
+    codon_to_aa,
+    aa_to_codon_extended,
+    codon_extended_to_aa,
+    compare_letters,
+)
 
 
 def convert_seq_to_codons(seq):
@@ -22,70 +20,98 @@ def convert_codonlist_to_tuplelist(seq_codons, codon_to_codon_extended):
     return codon_extended
 
 
-def find_matches(parasite_tuplelist, host_tuplelist):
-    index_of_matches = dict()
-    len_parasite = len(parasite_tuplelist)
-    len_host = len(host_tuplelist)
+def get_next_letter(sequence_tuplelist, current_letter_index):
+    letter_index = current_letter_index
+    if current_letter_index[2] == 2:
+        # last letter of triplet, advance to next codon:
+        letter_index = [letter_index[0] + 1, 0, 0]
+        try:
+            i, j, k = letter_index[0], letter_index[1], letter_index[2]
+            letter = (sequence_tuplelist[i][j][k], letter_index)
+            return letter
+        except:
+            raise
 
-    for begin_index in range(0, len_host - len_parasite + 1):
-        matching_sequence = []
-        parasite_index = 0
-        has_match = True
-        for parasite_index in range(0, len_parasite):
-            common_codons = set(parasite_tuplelist[parasite_index]) & set(
-                host_tuplelist[begin_index + parasite_index]
+    else:
+        # letter is not the last in triplet, get the next one:
+        letter_index[2] = letter_index[2] + 1
+        i, j, k = letter_index[0], letter_index[1], letter_index[2]
+        letter = (sequence_tuplelist[i][j][k], letter_index)
+        return letter
+
+
+def get_letter_in_next_triplet(sequence_tuplelist, current_letter_index):
+    letter_index = current_letter_index
+    letter_index[1] = letter_index[1] + 1
+    letter_index[2] = 0  # move to triplet's first letter
+    try:
+        i, j, k = letter_index[0], letter_index[1], letter_index[2]
+        letter = (sequence_tuplelist[i][j][k], letter_index)
+        return letter
+    except:
+        raise
+
+
+def compare_then_get_letter_recursively(
+    host_tuplelist, parasite_tuplelist, host_letter, parasite_letter
+):
+
+    is_match = compare_letters(host_letter[0], parasite_letter[0])
+
+    if is_match:
+        try:
+            next_parasite_letter = get_next_letter(
+                parasite_tuplelist, parasite_letter[1]
             )
-            if common_codons == set():
-                has_match = False
-                break
+
+        except:
+            return (
+                "Finished parasite sequence, match found! Ending host position:",
+                host_letter[1],
+            )
+
+        else:
+            next_host_letter = get_next_letter(
+                host_tuplelist, host_letter[1]
+            )  # always OK
+            return compare_then_get_letter_recursively(
+                host_tuplelist,
+                parasite_tuplelist,
+                next_host_letter,
+                next_parasite_letter,
+            )
+
+    else:  # letters do not match, move on to next parasite triplet
+        try:
+            next_parasite_letter = get_letter_in_next_triplet(
+                parasite_tuplelist, parasite_letter[1]
+            )
+
+        except:  # no more parasite triplet, get next host
+            try:
+                next_host_letter = get_letter_in_next_triplet(
+                    host_tuplelist, host_letter[1]
+                )
+            except:
+                return "No match for this starting codon position"
             else:
-                matching_sequence.append(tuple(common_codons))
-                parasite_index += 1
-        if has_match:
-            index_of_matches[begin_index] = matching_sequence
+                i = parasite_letter[1][0]  # same codon
+                j, k = 0, 0  # reset parasite to first triplet, first letter
+                next_parasite_letter = (parasite_tuplelist[i][j][k], [i, j, k])
+                return compare_then_get_letter_recursively(
+                    host_tuplelist,
+                    parasite_tuplelist,
+                    next_host_letter,
+                    next_parasite_letter,
+                )
 
-    return index_of_matches
-
-
-def report_results(index_of_matches):
-    if index_of_matches == dict():
-        print(
-            "The guest (parasite) sequence cannot be inserted into the host sequence."
-        )
-        return
-
-    print("The number of matching substrings in host is: %d," % len(index_of_matches))
-    positions = list(index_of_matches.keys())
-    print("at host codon position(s): %s" % positions)
-
-
-def calculate_aa_solutions(seq_codons, index_of_matches):
-    parasite_aa_seq = "".join(codon_to_aa[c] for c in seq_codons)
-    solutions = dict()
-    solutions["parasite"] = parasite_aa_seq
-    for key, match in index_of_matches.items():
-        solutions[key] = ""
-        for index, codon in enumerate(seq_codons):
-            aa = codon_to_aa[codon]
-            if set(aa_to_codon_extended[aa]) & set(match[index]) != set():
-                solutions[key] += aa
-            else:
-                solutions[key] += codon_extended_to_aa[
-                    match[index][0]
-                ]  # take the 1st aa
-
-    return solutions
-
-
-def calculate_levenshtein_distances(aa_solutions):
-    if not has_pkgs:
-        raise ImportError("Function requires the python-Levenshtein package.")
-
-    parasite = aa_solutions["parasite"]
-    del aa_solutions["parasite"]
-
-    levenshtein_distances = dict()
-    for key, aa_seq in aa_solutions.items():
-        levenshtein_distances[key] = distance(parasite, aa_seq)
-
-    return levenshtein_distances
+        else:
+            i, j = host_letter[1][0], host_letter[1][1]  # same codon, same triplet
+            k = 0  # reset host letter to beginning of triplet because parasite was reset
+            next_host_letter = (host_tuplelist[i][j][k], [i, j, k])
+            return compare_then_get_letter_recursively(
+                host_tuplelist,
+                parasite_tuplelist,
+                next_host_letter,
+                next_parasite_letter,
+            )

@@ -9,9 +9,12 @@ from .codontable import (
 from .genealloy import (
     convert_seq_to_codons,
     convert_codonlist_to_tuplelist,
-    find_matches,
-    report_results,
-    calculate_aa_solutions,
-    calculate_levenshtein_distances,
+    compare_then_get_letter_recursively,
 )
+# from .codon_comparison_functions import (
+#     find_matches,
+#     report_results,
+#     calculate_aa_solutions,
+#     calculate_levenshtein_distances,
+# )
 from .version import __version__
