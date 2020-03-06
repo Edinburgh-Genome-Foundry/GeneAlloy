@@ -2,7 +2,9 @@ from .codontable import (
     codon_to_aa,
     aa_to_codon_extended,
     codon_extended_to_aa,
+    ambiguity_code_to_nt_set,
     generate_swaptable,
+    compare_letters,
 )
 from .genealloy import (
     convert_seq_to_codons,

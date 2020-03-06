@@ -108,14 +108,14 @@ codon_extended_to_aa = {
     "GGX": "G",
     "CAY": "H",
     "ATH": "I",
-    "-": "J",
+    # "-": "J",
     "AAR": "K",
     "TTR": "L",
     "CTX": "L",
     "YTR": "L",
     "ATG": "M",
     "AAY": "N",
-    "-": "O",
+    # "-": "O",
     "CCX": "P",
     "CAR": "Q",
     "CGX": "R",
@@ -124,15 +124,35 @@ codon_extended_to_aa = {
     "TCX": "S",
     "AGY": "S",
     "ACX": "T",
-    "-": "U",
+    # "-": "U",
     "GTX": "V",
     "TGG": "W",
     "XXX": "X",
     "TAY": "Y",
     "SAR": "Z",
-    "-": ".",  # no amino acid (deletion or gap)
+    # "-": ".",  # no amino acid (deletion or gap)
     "TAR": "*",  # STOP codon
     "TRA": "*",  # STOP codon
+}
+
+
+ambiguity_code_to_nt_set = {
+    "A": {"A"},
+    "G": {"G"},
+    "C": {"C"},
+    "T": {"T"},
+    "Y": {"C", "T"},
+    "R": {"A", "G"},
+    "W": {"A", "T"},
+    "S": {"G", "C"},
+    "K": {"T", "G"},
+    "M": {"C", "A"},
+    "D": {"A", "G", "T"},
+    "V": {"A", "C", "G"},
+    "H": {"A", "C", "T"},
+    "B": {"C", "G", "T"},
+    "X": {"A", "C", "G", "T"},
+    "N": {"A", "C", "G", "T"},
 }
 
 
@@ -142,3 +162,16 @@ def generate_swaptable(codon_to_aa, aa_to_codon_extended):
         codon_to_codon_extended[k] = tuple(aa_to_codon_extended[v])
 
     return codon_to_codon_extended
+
+
+def compare_letters(letter1, letter2, table=ambiguity_code_to_nt_set):
+    """Compare two nucleotide letters and return True if they match"""
+    set1 = table[letter1]
+    set2 = table[letter2]
+
+    if set1 & set2 != set():
+        is_match = True
+    else:
+        is_match = False
+
+    return is_match
