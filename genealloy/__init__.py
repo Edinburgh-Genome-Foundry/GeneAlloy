@@ -10,6 +10,7 @@ from .genealloy import (
     convert_seq_to_codons,
     convert_codonlist_to_tuplelist,
     compare_then_get_letter_recursively,
+    SeqStep,
 )
 # from .codon_comparison_functions import (
 #     find_matches,
