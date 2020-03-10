@@ -13,6 +13,7 @@ from .genealloy import (
     walk_seqstep,
     compare_sequence_tuplelists,
     compare_sequence_tuplelists_in_all_frames,
+    make_genealloy,
     SeqStep,
 )
 # from .codon_comparison_functions import (

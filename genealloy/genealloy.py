@@ -152,6 +152,29 @@ def compare_sequence_tuplelists_in_all_frames(parasite_tuplelist, host_tuplelist
     return results_for_all_frames
 
 
+def make_genealloy(host, parasite, swaptable):
+    host_codons = convert_seq_to_codons(host)
+    host_tuplelist = convert_codonlist_to_tuplelist(
+        host_codons, swaptable
+    )
+
+    parasite_codons = convert_seq_to_codons(parasite)
+    parasite_tuplelist = convert_codonlist_to_tuplelist(
+        parasite_codons, swaptable
+    )
+
+    result = compare_sequence_tuplelists_in_all_frames(
+        parasite_tuplelist, host_tuplelist
+    )
+
+    if all(value == [] for value in result.values()):
+        print("These sequences cannot be mixed")
+    else:
+        print("A genealloy can be made using these sequences!")
+
+    return result
+
+
 class Duodon:
     def __init__(self, first_triplet, second_triplet):
         self.first_triplet = first_triplet
