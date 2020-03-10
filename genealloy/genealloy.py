@@ -116,9 +116,17 @@ def compare_then_get_letter_recursively(
                 next_parasite_letter,
             )
 
+
+class Duodon:
+    def __init__(self, first_triplet, second_triplet):
+        self.first_triplet = first_triplet
+        self.second_triplet = second_triplet
+
+
 class SeqStep:
-    def __init__(self, host_tuplelist, parasite_tuplelist, 
-                 frameshift=0, start_host_codon=0):
+    def __init__(
+        self, host_tuplelist, parasite_tuplelist, frameshift=0, start_host_codon=0
+    ):
         self.host_tuplelist = host_tuplelist
         self.parasite_tuplelist = parasite_tuplelist
         self.frameshift = frameshift
@@ -127,73 +135,96 @@ class SeqStep:
         self.len_parasite = len(parasite_tuplelist)
         self.len_host = len(host_tuplelist)
         self.finished = False
+        self.parasite_path = []
+        self.host_path = []
+        self.match = False
+        self.result = None
 
+    def generate_duodons(self):
+        self.cursor
+        self.start_host_codon
+        duodons = []
+        host_codon = self.start_host_codon + self.cursor
+        if self.host_path == []:  # first time it's made
+            for triplet_1 in self.host_tuplelist[host_codon]:
+                for triplet_2 in self.host_tuplelist[host_codon + 1]:
+                    duodons.append(Duodon(triplet_1, triplet_2))
+        else:
+            triplet_1 = self.host_path[-1].second_triplet  # of last used duodon
+            for triplet_2 in self.host_tuplelist[host_codon + 1]:
+                duodons.append(Duodon(triplet_1, triplet_2))
 
-    def advance_step(self):
-        if self.cursor == self.len_parasite:
-            self.finished = True
-            return "Match found between parasite and host sequence"
+        return duodons
 
-        subcursor = 0
-        initialized = False
+    def return_all_matching_duodons(self, triplet, duodons, frameshift=0):
+        matching_duodons = []
+        for duodon in duodons:
+            host_letters = duodon.first_triplet + duodon.second_triplet
 
-        while subcursor < 3:
-            if not initialized:
-                parasite_letter = (self.parasite_tuplelist[self.cursor][0][0], [self.cursor, 0, 0])
-                host_cursor = self.cursor + self.start_host_codon
-                host_letter = (self.host_tuplelist[host_cursor][0][0], [host_cursor, 0, 0])
-                initialized = True
-            else:
-                parasite_letter = get_next_letter(self.parasite_tuplelist, parasite_letter[1])
-                host_letter = get_next_letter(self.host_tuplelist, host_letter[1])
-            is_match = compare_letters(host_letter[0], parasite_letter[0])
-            if is_match:
-                print("Match")
-                subcursor += 1
+            # compare 1st letter:
+            if not compare_letters(host_letters[0 + frameshift], triplet[0]):
+                continue
+            if not compare_letters(host_letters[1 + frameshift], triplet[1]):
+                continue
+            if not compare_letters(host_letters[2 + frameshift], triplet[2]):
                 continue
 
-            else:  # letters do not match, move on to next parasite triplet
-                try:
-                    parasite_letter = get_letter_in_next_triplet(
-                        self.parasite_tuplelist, parasite_letter[1]
-                    )
+            matching_duodons.append(duodon)
 
-                except:  # no more parasite triplets, get next host triplet
+        return matching_duodons
+
+    def compare_triplet_and_duodon(self, triplet, duodon, frameshift=0):
+        host_letters = duodon.first_triplet + duodon.second_triplet
+
+        if not compare_letters(host_letters[0 + frameshift], triplet[0]):
+            return False
+        if not compare_letters(host_letters[1 + frameshift], triplet[1]):
+            return False
+        if not compare_letters(host_letters[2 + frameshift], triplet[2]):
+            return False
+
+        return True
+
+    def advance_step(self):
+        if self.result:
+            return self.result
+
+        if self.cursor == self.len_parasite:
+            self.match = True
+            self.result = (
+                "Match found between parasite and host sequence. Start codon was: "
+                + str(self.start_host_codon)
+            )
+            return self.result
+
+        parasite_triplets = list(self.parasite_tuplelist[self.cursor])
+        host_duodons = self.generate_duodons()
+
+        while True:
+            try:
+                parasite_triplet = parasite_triplets[0]
+            except:
+                self.result = "Sequences don't match. Start codon was: " + str(
+                    self.start_host_codon
+                )
+                return self.result
+            else:
+                host_duodons_for_parasite_triplet = host_duodons[:]
+                host_duodons_for_parasite_triplet = self.return_all_matching_duodons(
+                    parasite_triplet, host_duodons_for_parasite_triplet, frameshift=self.frameshift)
+                self.parasite_path.append(parasite_triplet)
+
+                while True:
                     try:
-                        host_letter = get_letter_in_next_triplet(
-                            self.host_tuplelist, host_letter[1]
-                        )
-                    except:  # no more host triplets
-                        self.finished = True
-                        return "No match for this codon"
+                        host_doudon = host_duodons_for_parasite_triplet[0]
+                    except:
+                        self.parasite_path.pop()
+                        del parasite_triplets[0]
+                        break
                     else:
-                        i = parasite_letter[1][0]  # same codon
-                        j, k = 0, 0  # reset parasite to first triplet, first letter
-                        parasite_letter = (self.parasite_tuplelist[i][j][k], [i, j, k])
-                        is_match = compare_letters(host_letter[0], parasite_letter[0])
-                        if is_match:
-                            print("Match")
-                            subcursor += 1
-                            continue
-
-                else:
-                    i, j = host_letter[1][0], host_letter[1][1]  # same codon, same triplet
-                    k = 0  # reset host letter to beginning of triplet because parasite was reset
-                    host_letter = (self.host_tuplelist[i][j][k], [i, j, k])
-                    is_match = compare_letters(host_letter[0], parasite_letter[0])
-                    if is_match:
-                        print("Match")
-                        subcursor += 1
-                        continue
-
-        # else:
-        #     return "No match"
-        self.cursor += 1
-        return "Codon matched, cursor advanced"
-
-
-    def test(self):
-
-        letter = get_next_letter(self.parasite_tuplelist, [0, 0, 2])
-        is_match = compare_letters('A', 'A')
-        return (is_match, letter)
+                        if self.compare_triplet_and_duodon(parasite_triplet, host_doudon, frameshift=self.frameshift):
+                            self.host_path.append(host_doudon)
+                            self.cursor += 1
+                            return "Codon matched, cursor advanced"
+                        else:
+                            del host_duodons_for_parasite_triplet[0]

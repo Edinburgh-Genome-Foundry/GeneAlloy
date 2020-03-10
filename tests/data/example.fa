@@ -8,3 +8,7 @@ CGCGGTGAGCATTTCAAGGGTACAACGGTTCAA
 ATGGTCAGGGCCCTGACC
 >E5_Same_strand_multiple_matches
 TTTCATGCTGCTGTA
+>E6_Same_strand_frameshift1_match
+CGTCGTACCAGCCGC
+>E7_Same_strand_frameshift2_match
+GTACCAGCCGCA
