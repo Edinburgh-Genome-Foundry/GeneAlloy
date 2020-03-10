@@ -2,6 +2,7 @@ from .codontable import (
     codon_to_aa,
     aa_to_codon_extended,
     codon_extended_to_aa,
+    complement_table,
     compare_letters,
 )
 
@@ -152,27 +153,44 @@ def compare_sequence_tuplelists_in_all_frames(parasite_tuplelist, host_tuplelist
     return results_for_all_frames
 
 
-def make_genealloy(host, parasite, swaptable):
+def make_genealloy(host, parasite, swaptable, verbose=True):
     host_codons = convert_seq_to_codons(host)
-    host_tuplelist = convert_codonlist_to_tuplelist(
-        host_codons, swaptable
-    )
+    host_tuplelist = convert_codonlist_to_tuplelist(host_codons, swaptable)
 
     parasite_codons = convert_seq_to_codons(parasite)
-    parasite_tuplelist = convert_codonlist_to_tuplelist(
-        parasite_codons, swaptable
-    )
+    parasite_tuplelist = convert_codonlist_to_tuplelist(parasite_codons, swaptable)
 
     result = compare_sequence_tuplelists_in_all_frames(
         parasite_tuplelist, host_tuplelist
     )
 
-    if all(value == [] for value in result.values()):
-        print("These sequences cannot be mixed")
-    else:
-        print("A genealloy can be made using these sequences!")
+    if verbose:
+        if all(value == [] for value in result.values()):
+            print("These sequences cannot be mixed")
+        else:
+            print("A genealloy can be made using these sequences!")
 
     return result
+
+
+def get_complement_tuplelist(codon_tuplelist):
+    complement_tuplelist = []
+    for index, codon in enumerate(codon_tuplelist):
+        complement_tripletlist = []
+        for triplet in codon:
+            letter1 = triplet[0]
+            letter2 = triplet[1]
+            letter3 = triplet[2]
+
+            complement_triplet = (
+                complement_table[letter1]
+                + complement_table[letter2]
+                + complement_table[letter3]
+            )
+            complement_tripletlist.append(complement_triplet)
+        complement_codon = tuple(complement_tripletlist)
+        complement_tuplelist.append(complement_codon)
+    return complement_tuplelist
 
 
 class Duodon:
