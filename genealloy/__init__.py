@@ -15,6 +15,7 @@ from .genealloy import (
     compare_sequence_tuplelists_in_all_frames,
     make_genealloy,
     get_complement_tuplelist,
+    get_reverse_tuplelist,
     SeqStep,
 )
 # from .codon_comparison_functions import (

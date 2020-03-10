@@ -190,7 +190,21 @@ def get_complement_tuplelist(codon_tuplelist):
             complement_tripletlist.append(complement_triplet)
         complement_codon = tuple(complement_tripletlist)
         complement_tuplelist.append(complement_codon)
+
     return complement_tuplelist
+
+
+def get_reverse_tuplelist(codon_tuplelist):
+    reverse_tuplelist = []
+    for codon in reversed(codon_tuplelist):
+        reverse_tripletlist = []
+        for triplet in codon:
+            reverse_triplet = triplet[::-1]
+            reverse_tripletlist.append(reverse_triplet)
+        reverse_codon = tuple(reverse_tripletlist)
+        reverse_tuplelist.append(reverse_codon)
+    
+    return reverse_tuplelist
 
 
 class Duodon:
