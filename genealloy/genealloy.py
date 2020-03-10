@@ -207,6 +207,13 @@ def get_reverse_tuplelist(codon_tuplelist):
     return reverse_tuplelist
 
 
+def get_reverse_complement_tuplelist(codon_tuplelist):
+    complement_tuplelist = get_complement_tuplelist(codon_tuplelist)
+    reverse_complement_tuplelist = get_reverse_tuplelist(complement_tuplelist)
+
+    return reverse_complement_tuplelist
+
+
 class Duodon:
     def __init__(self, first_triplet, second_triplet):
         self.first_triplet = first_triplet
