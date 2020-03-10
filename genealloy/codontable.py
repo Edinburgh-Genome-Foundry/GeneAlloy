@@ -156,6 +156,26 @@ ambiguity_code_to_nt_set = {
 }
 
 
+complement_table = {
+    "A": "T",
+    "G": "C",
+    "C": "G",
+    "T": "A",
+    "Y": "R",
+    "R": "Y",
+    "W": "W",
+    "S": "S",
+    "K": "M",
+    "M": "K",
+    "D": "H",
+    "V": "B",
+    "H": "D",
+    "B": "V",
+    "X": "X",
+    "N": "N",
+}
+
+
 def generate_swaptable(codon_to_aa, aa_to_codon_extended):
     codon_to_codon_extended = dict()
     for k, v in codon_to_aa.items():
