@@ -117,6 +117,41 @@ def compare_then_get_letter_recursively(
             )
 
 
+def walk_seqstep(seqstep):
+    while not seqstep.result:
+        seqstep.advance_step()
+
+
+def compare_sequence_tuplelists(parasite_tuplelist, host_tuplelist, frameshift):
+    len_parasite = len(parasite_tuplelist)
+    len_host = len(host_tuplelist)
+    list_of_matches = []
+
+    for start_host_codon in range(0, len_host - len_parasite + 1):
+        seqstep = SeqStep(
+            host_tuplelist,
+            parasite_tuplelist,
+            start_host_codon=start_host_codon,
+            frameshift=frameshift,
+        )
+        walk_seqstep(seqstep)
+        if seqstep.match:
+            list_of_matches.append(start_host_codon)
+
+    return list_of_matches
+
+
+def compare_sequence_tuplelists_in_all_frames(parasite_tuplelist, host_tuplelist):
+    results_for_all_frames = dict()
+    for frameshift in [0, 1, 2]:
+        result = compare_sequence_tuplelists(
+            parasite_tuplelist, host_tuplelist, frameshift
+        )
+        results_for_all_frames[frameshift] = result
+
+    return results_for_all_frames
+
+
 class Duodon:
     def __init__(self, first_triplet, second_triplet):
         self.first_triplet = first_triplet
@@ -134,7 +169,6 @@ class SeqStep:
         self.cursor = 0
         self.len_parasite = len(parasite_tuplelist)
         self.len_host = len(host_tuplelist)
-        self.finished = False
         self.parasite_path = []
         self.host_path = []
         self.match = False
@@ -211,7 +245,10 @@ class SeqStep:
             else:
                 host_duodons_for_parasite_triplet = host_duodons[:]
                 host_duodons_for_parasite_triplet = self.return_all_matching_duodons(
-                    parasite_triplet, host_duodons_for_parasite_triplet, frameshift=self.frameshift)
+                    parasite_triplet,
+                    host_duodons_for_parasite_triplet,
+                    frameshift=self.frameshift,
+                )
                 self.parasite_path.append(parasite_triplet)
 
                 while True:
@@ -222,7 +259,9 @@ class SeqStep:
                         del parasite_triplets[0]
                         break
                     else:
-                        if self.compare_triplet_and_duodon(parasite_triplet, host_doudon, frameshift=self.frameshift):
+                        if self.compare_triplet_and_duodon(
+                            parasite_triplet, host_doudon, frameshift=self.frameshift
+                        ):
                             self.host_path.append(host_doudon)
                             self.cursor += 1
                             return "Codon matched, cursor advanced"
