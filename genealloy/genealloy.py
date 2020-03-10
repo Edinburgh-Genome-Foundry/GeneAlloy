@@ -142,13 +142,16 @@ def compare_sequence_tuplelists(parasite_tuplelist, host_tuplelist, frameshift):
     return list_of_matches
 
 
-def compare_sequence_tuplelists_in_all_frames(parasite_tuplelist, host_tuplelist):
+def compare_sequence_tuplelists_in_all_frames(
+    parasite_tuplelist, host_tuplelist, prefix=""
+):
     results_for_all_frames = dict()
     for frameshift in [0, 1, 2]:
         result = compare_sequence_tuplelists(
             parasite_tuplelist, host_tuplelist, frameshift
         )
-        results_for_all_frames[frameshift] = result
+        key = prefix + str(frameshift)
+        results_for_all_frames[key] = result
 
     return results_for_all_frames
 
@@ -160,9 +163,18 @@ def make_genealloy(host, parasite, swaptable, verbose=True):
     parasite_codons = convert_seq_to_codons(parasite)
     parasite_tuplelist = convert_codonlist_to_tuplelist(parasite_codons, swaptable)
 
-    result = compare_sequence_tuplelists_in_all_frames(
-        parasite_tuplelist, host_tuplelist
+    forward_results = compare_sequence_tuplelists_in_all_frames(
+        parasite_tuplelist, host_tuplelist, prefix="f_"
     )
+
+    reverse_complement_tuplelist = get_reverse_complement_tuplelist(host_tuplelist)
+
+    reverse_complement_results = compare_sequence_tuplelists_in_all_frames(
+        parasite_tuplelist, reverse_complement_tuplelist, prefix="rc_"
+    )
+
+    result = forward_results.copy()
+    result.update(reverse_complement_results)
 
     if verbose:
         if all(value == [] for value in result.values()):
@@ -203,7 +215,7 @@ def get_reverse_tuplelist(codon_tuplelist):
             reverse_tripletlist.append(reverse_triplet)
         reverse_codon = tuple(reverse_tripletlist)
         reverse_tuplelist.append(reverse_codon)
-    
+
     return reverse_tuplelist
 
 
