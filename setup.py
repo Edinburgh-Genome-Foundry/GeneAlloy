@@ -4,11 +4,13 @@ ez_setup.use_setuptools()
 
 from setuptools import setup, find_packages
 
-exec(open("genealloy/version.py").read())  # loads __version__
+version = {}
+with open("genealloy/version.py") as fp:
+    exec(fp.read(), version)
 
 setup(
     name="genealloy",
-    version=__version__,
+    version=version["__version__"],
     author="Peter Vegh",
     description="GeneAlloy helps designing overlapping sequences.",
     long_description=open("README.md").read(),

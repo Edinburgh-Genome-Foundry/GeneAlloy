@@ -19,10 +19,4 @@ from .genealloy import (
     get_reverse_complement_tuplelist,
     SeqStep,
 )
-# from .codon_comparison_functions import (
-#     find_matches,
-#     report_results,
-#     calculate_aa_solutions,
-#     calculate_levenshtein_distances,
-# )
 from .version import __version__
