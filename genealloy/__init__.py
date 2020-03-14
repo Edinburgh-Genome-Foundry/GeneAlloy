@@ -3,6 +3,8 @@ from .codontable import (
     aa_to_codon_extended,
     codon_extended_to_aa,
     ambiguity_code_to_nt_set,
+    allowed_aa_transitions,
+    make_transition_dictionary,
     generate_swaptable,
     compare_letters,
 )

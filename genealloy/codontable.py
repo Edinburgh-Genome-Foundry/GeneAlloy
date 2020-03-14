@@ -89,7 +89,7 @@ aa_to_codon_extended = {
     "R": ["CGX", "AGR", "MGR"],
     "S": ["TCX", "AGY"],
     "T": ["ACX"],
-    "U": ["-"],
+    # "U": ["-"],
     "V": ["GTX"],
     "W": ["TGG"],
     "X": ["XXX"],
@@ -180,7 +180,50 @@ complement_table = {
     "N": "N",
 }
 
+allowed_aa_transitions = {
+    "A": ["G", "A", "V", "L", "I"],
+    "B": ["D", "E", "N", "Q", "B", "Z"],
+    "C": ["S", "C", "M", "T"],
+    "D": ["D", "E", "N", "Q", "B", "Z"],
+    "E": ["D", "E", "N", "Q", "B", "Z"],
+    "F": ["F", "Y", "W"],
+    "G": ["G", "A", "V", "L", "I"],
+    "H": ["H", "K", "R"],
+    "I": ["G", "A", "V", "L", "I"],
+    #     'J': ['J'],
+    "K": ["H", "K", "R"],
+    "L": ["G", "A", "V", "L", "I"],
+    "M": ["S", "C", "M", "T"],
+    "N": ["D", "E", "N", "Q", "B", "Z"],
+    #     'O': ['O'],
+    "P": ["P"],
+    "Q": ["D", "E", "N", "Q", "B", "Z"],
+    "R": ["H", "K", "R"],
+    "S": ["S", "C", "M", "T"],
+    "T": ["S", "C", "M", "T"],
+    # "U": ['S', 'C', 'U', 'M', 'T'],
+    "V": ["G", "A", "V", "L", "I"],
+    "W": ["F", "Y", "W"],
+    "X": ["X"],
+    "Y": ["F", "Y", "W"],
+    "Z": ["D", "E", "N", "Q", "B", "Z"],
+    ".": ["."],
+    "*": ["*"],
+}
 
+
+def make_transition_dictionary(aa_to_codon_extended, allowed_aa_transitions):
+    transition_dictionary = {}
+    for aa, aa_list in allowed_aa_transitions.items():
+        codons = []
+        for aa_element in aa_list:
+            triplets_to_add = aa_to_codon_extended[aa_element]
+            codons = codons + triplets_to_add
+        transition_dictionary[aa] = codons
+    return transition_dictionary
+
+
+# TODO rename aa_to_codon_extended --> transition_dictionary and references elsewhere
 def generate_swaptable(codon_to_aa, aa_to_codon_extended):
     """Generate a codon to extended codon dictionary"""
     codon_to_codon_extended = dict()
