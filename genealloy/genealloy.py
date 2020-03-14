@@ -8,12 +8,18 @@ from .codontable import (
 
 
 def convert_seq_to_codons(seq):
+    """Convert a string (sequence) into a list of 3-letter strings (triplets)."""
     seq_codons = [seq[i : i + 3] for i in range(0, len(seq), 3)]
 
     return seq_codons
 
 
 def convert_codonlist_to_tuplelist(seq_codons, codon_to_codon_extended):
+    """Convert a list of triplets into a list of tuples, using a swaptable.
+
+    The swaptable isa dict of triplet: triplets, and determines the
+    allowed swaps.
+    """
     codon_extended = [None] * len(seq_codons)
     for i, codon in enumerate(seq_codons):
         codon_extended[i] = codon_to_codon_extended[codon]
@@ -22,6 +28,7 @@ def convert_codonlist_to_tuplelist(seq_codons, codon_to_codon_extended):
 
 
 def get_next_letter(sequence_tuplelist, current_letter_index):
+    """Get next letter in the sequence."""
     letter_index = current_letter_index
     if current_letter_index[2] == 2:
         # last letter of triplet, advance to next codon:
@@ -42,9 +49,10 @@ def get_next_letter(sequence_tuplelist, current_letter_index):
 
 
 def get_letter_in_next_triplet(sequence_tuplelist, current_letter_index):
+    """Get first letter in the next triplet."""
     letter_index = current_letter_index
-    letter_index[1] = letter_index[1] + 1
-    letter_index[2] = 0  # move to triplet's first letter
+    letter_index[1] = letter_index[1] + 1  # triplet position
+    letter_index[2] = 0  # move letter position to triplet's first letter
     try:
         i, j, k = letter_index[0], letter_index[1], letter_index[2]
         letter = (sequence_tuplelist[i][j][k], letter_index)
@@ -56,6 +64,20 @@ def get_letter_in_next_triplet(sequence_tuplelist, current_letter_index):
 def compare_then_get_letter_recursively(
     host_tuplelist, parasite_tuplelist, host_letter, parasite_letter
 ):
+    """Compare two letters then get next pair of letters recursively.
+
+    Returns string for match or no match between the sequences.
+    """
+
+    # This function works only for in-frame comparisons and is given the first
+    # letters of the host and parasite sequences. If the two letters match,
+    # then gets the next parasite and host letters, and calls itself.
+    # If can't get next parasite letter, then the comparison has finished
+    # and a full match has been found.
+    # If letters do not match, then gets the next parasite triplet and calls
+    # itself; if there are no more parasite triplets, it gets the next host
+    # triplet and calls itself. If there are no more host triplets, then there is
+    # no match between the sequences.
 
     is_match = compare_letters(host_letter[0], parasite_letter[0])
 
@@ -119,11 +141,13 @@ def compare_then_get_letter_recursively(
 
 
 def walk_seqstep(seqstep):
+    """Compare two sequences by calling `advance_step` until it returns the result."""
     while not seqstep.result:
         seqstep.advance_step()
 
 
 def compare_sequence_tuplelists(parasite_tuplelist, host_tuplelist, frameshift):
+    """Compare two sequence's tuplists for given frame and return list of matches."""
     len_parasite = len(parasite_tuplelist)
     len_host = len(host_tuplelist)
     list_of_matches = []
@@ -145,6 +169,7 @@ def compare_sequence_tuplelists(parasite_tuplelist, host_tuplelist, frameshift):
 def compare_sequence_tuplelists_in_all_frames(
     parasite_tuplelist, host_tuplelist, prefix=""
 ):
+    """Compare two sequence's tuplists for all frames and return dict of matches."""
     results_for_all_frames = dict()
     for frameshift in [0, 1, 2]:
         result = compare_sequence_tuplelists(
@@ -157,6 +182,7 @@ def compare_sequence_tuplelists_in_all_frames(
 
 
 def make_genealloy(host, parasite, swaptable, verbose=True):
+    """Compare two sequence strings and return dictionary of matches."""
     host_codons = convert_seq_to_codons(host)
     host_tuplelist = convert_codonlist_to_tuplelist(host_codons, swaptable)
 
@@ -186,6 +212,7 @@ def make_genealloy(host, parasite, swaptable, verbose=True):
 
 
 def get_complement_tuplelist(codon_tuplelist):
+    """Get complement triplets of a sequence tuplelist."""
     complement_tuplelist = []
     for index, codon in enumerate(codon_tuplelist):
         complement_tripletlist = []
@@ -207,6 +234,7 @@ def get_complement_tuplelist(codon_tuplelist):
 
 
 def get_reverse_tuplelist(codon_tuplelist):
+    """Get reverse of a tuplelist with reversed triplets."""
     reverse_tuplelist = []
     for codon in reversed(codon_tuplelist):
         reverse_tripletlist = []
@@ -220,6 +248,7 @@ def get_reverse_tuplelist(codon_tuplelist):
 
 
 def get_reverse_complement_tuplelist(codon_tuplelist):
+    """Get reverse complement of a sequence's tuplelist."""
     complement_tuplelist = get_complement_tuplelist(codon_tuplelist)
     reverse_complement_tuplelist = get_reverse_tuplelist(complement_tuplelist)
 
@@ -227,12 +256,41 @@ def get_reverse_complement_tuplelist(codon_tuplelist):
 
 
 class Duodon:
+    """Class for storing two triplets"""
+
     def __init__(self, first_triplet, second_triplet):
         self.first_triplet = first_triplet
         self.second_triplet = second_triplet
 
 
 class SeqStep:
+    """Class for keeping track of sequence comparison
+
+    It stores a method that aligns a parasite triplet with two consecutive host
+    triplets (duodons), a cursor that marks the position of the comparison process,
+    and methods for generating duodons and comparing them with triplets.
+    The `advance_step()` method attempts to advance the comparison by one codon
+    step. It can (i) advance the cursor or (ii) conclude there is no match or
+    (iii) conclude there is a match.
+
+    Parameters
+    ----------
+
+    host_tuplelist
+      A list of tuples. Each tuple stores the allowed triplets for a codon
+      position of the host sequence.
+
+    parasite_tuplelist
+      A list of tuples. Each tuple stores the allowed triplets for a codon
+      position of the parasite sequence.
+
+    frameshift
+      An integer (0, 1 or 2) denoting the frameshift between host and parasite.
+
+    start_host_codon
+      The host codon position from which the comparison should start.
+    """
+
     def __init__(
         self, host_tuplelist, parasite_tuplelist, frameshift=0, start_host_codon=0
     ):
