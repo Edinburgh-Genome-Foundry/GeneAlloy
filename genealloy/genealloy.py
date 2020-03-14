@@ -17,7 +17,7 @@ def convert_seq_to_codons(seq):
 def convert_codonlist_to_tuplelist(seq_codons, codon_to_codon_extended):
     """Convert a list of triplets into a list of tuples, using a swaptable.
 
-    The swaptable isa dict of triplet: triplets, and determines the
+    The swaptable is a dict of triplet: triplets, and determines the
     allowed swaps.
     """
     codon_extended = [None] * len(seq_codons)
@@ -88,9 +88,9 @@ def compare_then_get_letter_recursively(
             )
 
         except:
-            return (
-                "Finished parasite sequence, match found! Ending host position:",
-                host_letter[1],
+            return str(
+                "Finished parasite sequence, match found! Ending host position:"
+                + str(host_letter[1])
             )
 
         else:
@@ -270,8 +270,8 @@ class SeqStep:
     triplets (duodons), a cursor that marks the position of the comparison process,
     and methods for generating duodons and comparing them with triplets.
     The `advance_step()` method attempts to advance the comparison by one codon
-    step. It can (i) advance the cursor or (ii) conclude there is no match or
-    (iii) conclude there is a match.
+    step. It can (i) advance the cursor or (ii) conclude that there is no match
+    between the sequences, or (iii) conclude that there is a match.
 
     Parameters
     ----------
