@@ -1,5 +1,7 @@
 import pytest
 
+from Bio import SeqIO
+
 import genealloy as ga
 from genealloy.genealloy import get_next_letter
 from genealloy.genealloy import get_letter_in_next_triplet
@@ -72,3 +74,37 @@ def test_compare_then_get_letter_recursively():
     )
 
     assert no_result == "No match for this starting codon position"
+
+
+def test_make_genealloy():
+    records = list(SeqIO.parse("tests/data/example.fa", "fasta"))
+    swaptable = ga.generate_swaptable(ga.codon_to_aa, ga.aa_to_codon_extended)
+
+    host = str(records[0].seq)
+
+    parasite = str(records[2].seq)
+    result = ga.make_genealloy(host, parasite, swaptable, verbose=True)
+    assert result["f_0"] == [55, 155]
+
+    parasite = str(records[3].seq)
+    result = ga.make_genealloy(host, parasite, swaptable, verbose=True)
+    assert result["f_0"] == []
+
+    parasite = str(records[5].seq)
+    result = ga.make_genealloy(host, parasite, swaptable, verbose=True)
+    assert result["f_1"] == [0]
+
+    parasite = str(records[6].seq)
+    result = ga.make_genealloy(host, parasite, swaptable, verbose=True)
+    assert result["f_2"] == [1, 92, 133, 281]
+
+
+def test_find_partial_overlaps():
+    records = list(SeqIO.parse("tests/data/example.fa", "fasta"))
+    swaptable = ga.generate_swaptable(ga.codon_to_aa, ga.aa_to_codon_extended)
+
+    host = str(records[0].seq)
+    parasite = str(records[7].seq)
+
+    result = ga.find_partial_overlaps(host, parasite, swaptable, verbose=True)
+    assert result["f_0"] == [0, 4, 387]
