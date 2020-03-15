@@ -1,8 +1,8 @@
 import ez_setup
 
-ez_setup.use_setuptools()
-
 from setuptools import setup, find_packages
+
+ez_setup.use_setuptools()
 
 version = {}
 with open("genealloy/version.py") as fp:
@@ -15,6 +15,7 @@ setup(
     description="GeneAlloy helps designing overlapping sequences.",
     long_description=open("README.md").read(),
     license="MIT",
+    url="https://github.com/Edinburgh-Genome-Foundry/GeneAlloy",
     keywords="biology",
     packages=find_packages(exclude="docs"),
     install_requires=["biopython"],
