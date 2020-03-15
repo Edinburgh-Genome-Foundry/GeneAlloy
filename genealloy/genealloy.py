@@ -181,6 +181,17 @@ def compare_sequence_tuplelists_in_all_frames(
     return results_for_all_frames
 
 
+def find_partial_overlaps(host, parasite, swaptable, verbose=True):
+    flank = len(parasite) * "N"
+    host_flank = flank + host + flank
+
+    swaptable["NNN"] = ("NNN",)
+
+    result = make_genealloy(host_flank, parasite, swaptable, verbose=True)
+
+    return result
+
+
 def make_genealloy(host, parasite, swaptable, verbose=True):
     """Compare two sequence strings and return dictionary of matches."""
     host_codons = convert_seq_to_codons(host)
@@ -317,8 +328,11 @@ class SeqStep:
                     duodons.append(Duodon(triplet_1, triplet_2))
         else:
             triplet_1 = self.host_path[-1].second_triplet  # of last used duodon
-            for triplet_2 in self.host_tuplelist[host_codon + 1]:
-                duodons.append(Duodon(triplet_1, triplet_2))
+            try:
+                for triplet_2 in self.host_tuplelist[host_codon + 1]:
+                    duodons.append(Duodon(triplet_1, triplet_2))
+            except:
+                duodons.append(Duodon(triplet_1, "NNN"))
 
         return duodons
 

@@ -15,6 +15,7 @@ from .genealloy import (
     walk_seqstep,
     compare_sequence_tuplelists,
     compare_sequence_tuplelists_in_all_frames,
+    find_partial_overlaps,
     make_genealloy,
     get_complement_tuplelist,
     get_reverse_tuplelist,

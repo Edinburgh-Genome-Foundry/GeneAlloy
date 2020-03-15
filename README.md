@@ -7,20 +7,17 @@ GeneAlloy
 
 **Genealloy** helps designing *overlapping* sequences.
 
-It takes two amino acid coding nucleotide sequences and a codon conversion table of allowed triplet -> triplet transitions, and determines whether one sequence can be inserted into the other one.
-
+It takes two amino acid coding nucleotide sequences and a codon conversion table of allowed triplet -> triplet transitions, and determines whether one sequence can be inserted into the other one. Note that the package is **under development.**
 
 *Overlapping sequences* are nucleotide sequences that encode different amino acid sequences on the same DNA or RNA region. These sequences are either on the complementary strands (in any frame), or on the same strand as frameshift sequences. This phenomenon is made possible by the redundancy of the genetic code (codon degeneracy).
 
-The longer sequence into which the shorter is inserted is called the host, and the shorter one is the guest or parasite. 
-
-In the metallurgic terminology used at the genome foundries, the host sequence is called the *matrix* or *solvent*, the parasite is called the *solute*, and a combination sequence is called a *genealloy*.
+In the metallurgic terminology used at the genome foundries, the host sequence (into which the shorter sequence is inserted) is called the *matrix* or *solvent,* and the shorter guest (or parasite) is called the *solute;* and a combination sequence is called a *genealloy.*
 
 
 Install
 -------
 
-    pip install --user git+https://github.com/Edinburgh-Genome-Foundry/GeneAlloy.git
+    pip install git+https://github.com/Edinburgh-Genome-Foundry/GeneAlloy.git
 
 
 Usage
@@ -32,15 +29,19 @@ Usage
     parasite =  'GTACCCGCTGCG'  # frameshift 2
     ga.make_genealloy(host, parasite, swaptable)
 
+Find partial overlaps:
+
+    ga.find_partial_overlaps(host, parasite, swaptable)
+
 
 Version
 -------
 
-The GeneAlloy project uses the [semantic versioning](https://semver.org) scheme.
+The GeneAlloy project uses the [semantic versioning](https://semver.org) scheme. The package is **under development.**
 
 
 License = MIT
---------------
+-------------
 
 Genealloy is [free software](https://www.gnu.org/philosophy/free-sw.en.html), which means the users have the freedom to run, copy, distribute, study, change and improve the software.
 
