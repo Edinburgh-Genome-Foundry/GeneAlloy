@@ -1,0 +1,1127 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.0">
+    
+    
+      
+        <title>Codontable - GeneAlloy</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.b5d04df8.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.9ab2c1f8.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#4caf50">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="lightgreen">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#module-genealloycodontable" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../../.." title="GeneAlloy" class="md-header-nav__button md-logo" aria-label="GeneAlloy">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            GeneAlloy
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Codontable
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/Edinburgh-Genome-Foundry/GeneAlloy/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GeneAlloy
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="GeneAlloy" class="md-nav__button md-logo" aria-label="GeneAlloy">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    GeneAlloy
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/Edinburgh-Genome-Foundry/GeneAlloy/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GeneAlloy
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Reference
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Reference" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Reference
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1" checked>
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Genealloy
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Genealloy" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Genealloy
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Codontable
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Codontable" class="md-nav__link md-nav__link--active">
+      Codontable
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    Variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compare_letters" class="md-nav__link">
+    compare_letters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate_swaptable" class="md-nav__link">
+    generate_swaptable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make_transition_dictionary" class="md-nav__link">
+    make_transition_dictionary
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../genealloy/" title="Genealloy" class="md-nav__link">
+      Genealloy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../version/" title="Version" class="md-nav__link">
+      Version
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    Variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compare_letters" class="md-nav__link">
+    compare_letters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate_swaptable" class="md-nav__link">
+    generate_swaptable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make_transition_dictionary" class="md-nav__link">
+    make_transition_dictionary
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/Edinburgh-Genome-Foundry/GeneAlloy/edit/master/reference/genealloy/codontable.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="module-genealloycodontable">Module genealloy.codontable</h1>
+<p>Codon to amino acid dictionary</p>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><code><span class="ss">&quot;&quot;&quot;Codon to amino acid dictionary&quot;&quot;&quot;</span><span class="w"></span>
+
+<span class="n">codon_to_aa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;TTT&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;F&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;TTC&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;F&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;TTA&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;L&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;TTG&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;L&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;TCT&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;S&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;TCC&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;S&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;TCA&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;S&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;TCG&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;S&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;TAT&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;Y&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;TAC&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;Y&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;TAA&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;*&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;TAG&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;*&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;TGT&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;C&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;TGC&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;C&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;TGA&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;*&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;TGG&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;W&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;CTT&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;L&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;CTC&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;L&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;CTA&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;L&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;CTG&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;L&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;CCT&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;P&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;CCC&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;P&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;CCA&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;P&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;CCG&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;P&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;CAT&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;H&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;CAC&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;H&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;CAA&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;Q&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;CAG&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;Q&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;CGT&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;R&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;CGC&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;R&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;CGA&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;R&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;CGG&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;R&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;ATT&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;I&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;ATC&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;I&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;ATA&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;I&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;ATG&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;M&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;ACT&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;T&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;ACC&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;T&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;ACA&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;T&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;ACG&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;T&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;AAT&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;N&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;AAC&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;N&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;AAA&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;K&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;AAG&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;K&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;AGT&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;S&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;AGC&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;S&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;AGA&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;R&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;AGG&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;R&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;GTT&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;V&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;GTC&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;V&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;GTA&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;V&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;GTG&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;V&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;GCT&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;A&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;GCC&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;A&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;GCA&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;A&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;GCG&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;A&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;GAT&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;D&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;GAC&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;D&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;GAA&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;E&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;GAG&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;E&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;GGT&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;G&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;GGC&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;G&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;GGA&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;G&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;GGG&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;G&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="err">}</span><span class="w"></span>
+
+<span class="ss">&quot;&quot;&quot;Amino acid to codon dictionary, using extended nucleotide letters&quot;&quot;&quot;</span><span class="w"></span>
+
+<span class="n">aa_to_codon_extended</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;A&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;GCX&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;B&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;RAY&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;C&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;TGY&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;D&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;GAY&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;E&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;GAR&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;F&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;TTY&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;G&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;GGX&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;H&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;CAY&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;I&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;ATH&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="err">#</span><span class="w">     </span><span class="s1">&#39;J&#39;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&#39;-&#39;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;K&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;AAR&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;L&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;TTR&quot;, &quot;CTX&quot;, &quot;YTR&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;M&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;ATG&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;N&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;AAY&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="err">#</span><span class="w">     </span><span class="s1">&#39;O&#39;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&#39;-&#39;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;P&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;CCX&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;Q&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;CAR&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;R&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;CGX&quot;, &quot;AGR&quot;, &quot;MGR&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;S&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;TCX&quot;, &quot;AGY&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;T&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;ACX&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="ss">&quot;U&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;-&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;V&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;GTX&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;W&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;TGG&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;X&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;XXX&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;Y&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;TAY&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;Z&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;SAR&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;.&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;-&quot;</span><span class="o">]</span><span class="p">,</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="k">no</span><span class="w"> </span><span class="n">amino</span><span class="w"> </span><span class="n">acid</span><span class="w"> </span><span class="p">(</span><span class="n">deletion</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">gap</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;*&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;TAR&quot;, &quot;TRA&quot;</span><span class="o">]</span><span class="p">,</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="n">STOP</span><span class="w"> </span><span class="n">codons</span><span class="w"></span>
+
+<span class="err">}</span><span class="w"></span>
+
+<span class="ss">&quot;&quot;&quot;Codon to amino acid dictionary, using extended nucleotide letters&quot;&quot;&quot;</span><span class="w"></span>
+
+<span class="n">codon_extended_to_aa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;GCX&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;A&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;RAY&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;B&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;TGY&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;C&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;GAY&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;D&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;GAR&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;E&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;TTY&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;F&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;GGX&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;G&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;CAY&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;H&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;ATH&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;I&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="ss">&quot;-&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;J&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;AAR&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;K&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;TTR&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;L&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;CTX&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;L&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;YTR&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;L&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;ATG&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;M&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;AAY&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;N&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="ss">&quot;-&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;O&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;CCX&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;P&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;CAR&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;Q&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;CGX&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;R&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;AGR&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;R&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;MGR&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;R&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;TCX&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;S&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;AGY&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;S&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;ACX&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;T&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="ss">&quot;-&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;U&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;GTX&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;V&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;TGG&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;W&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;XXX&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;X&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;TAY&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;Y&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;SAR&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;Z&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="ss">&quot;-&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;.&quot;</span><span class="p">,</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="k">no</span><span class="w"> </span><span class="n">amino</span><span class="w"> </span><span class="n">acid</span><span class="w"> </span><span class="p">(</span><span class="n">deletion</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">gap</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;TAR&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;*&quot;</span><span class="p">,</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="n">STOP</span><span class="w"> </span><span class="n">codon</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;TRA&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;*&quot;</span><span class="p">,</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="n">STOP</span><span class="w"> </span><span class="n">codon</span><span class="w"></span>
+
+<span class="err">}</span><span class="w"></span>
+
+<span class="ss">&quot;&quot;&quot;Extended nucleotide letter to nucleotide letter dictionary&quot;&quot;&quot;</span><span class="w"></span>
+
+<span class="n">ambiguity_code_to_nt_set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;A&quot;</span><span class="err">:</span><span class="w"> </span><span class="err">{</span><span class="ss">&quot;A&quot;</span><span class="err">}</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;G&quot;</span><span class="err">:</span><span class="w"> </span><span class="err">{</span><span class="ss">&quot;G&quot;</span><span class="err">}</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;C&quot;</span><span class="err">:</span><span class="w"> </span><span class="err">{</span><span class="ss">&quot;C&quot;</span><span class="err">}</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;T&quot;</span><span class="err">:</span><span class="w"> </span><span class="err">{</span><span class="ss">&quot;T&quot;</span><span class="err">}</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;Y&quot;</span><span class="err">:</span><span class="w"> </span><span class="err">{</span><span class="ss">&quot;C&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;T&quot;</span><span class="err">}</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;R&quot;</span><span class="err">:</span><span class="w"> </span><span class="err">{</span><span class="ss">&quot;A&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;G&quot;</span><span class="err">}</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;W&quot;</span><span class="err">:</span><span class="w"> </span><span class="err">{</span><span class="ss">&quot;A&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;T&quot;</span><span class="err">}</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;S&quot;</span><span class="err">:</span><span class="w"> </span><span class="err">{</span><span class="ss">&quot;G&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;C&quot;</span><span class="err">}</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;K&quot;</span><span class="err">:</span><span class="w"> </span><span class="err">{</span><span class="ss">&quot;T&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;G&quot;</span><span class="err">}</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;M&quot;</span><span class="err">:</span><span class="w"> </span><span class="err">{</span><span class="ss">&quot;C&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;A&quot;</span><span class="err">}</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;D&quot;</span><span class="err">:</span><span class="w"> </span><span class="err">{</span><span class="ss">&quot;A&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;G&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;T&quot;</span><span class="err">}</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;V&quot;</span><span class="err">:</span><span class="w"> </span><span class="err">{</span><span class="ss">&quot;A&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;C&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;G&quot;</span><span class="err">}</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;H&quot;</span><span class="err">:</span><span class="w"> </span><span class="err">{</span><span class="ss">&quot;A&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;C&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;T&quot;</span><span class="err">}</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;B&quot;</span><span class="err">:</span><span class="w"> </span><span class="err">{</span><span class="ss">&quot;C&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;G&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;T&quot;</span><span class="err">}</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;X&quot;</span><span class="err">:</span><span class="w"> </span><span class="err">{</span><span class="ss">&quot;A&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;C&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;G&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;T&quot;</span><span class="err">}</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;N&quot;</span><span class="err">:</span><span class="w"> </span><span class="err">{</span><span class="ss">&quot;A&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;C&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;G&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;T&quot;</span><span class="err">}</span><span class="p">,</span><span class="w"></span>
+
+<span class="err">}</span><span class="w"></span>
+
+<span class="ss">&quot;&quot;&quot;Extended nucleotide letter to complement letter dictionary&quot;&quot;&quot;</span><span class="w"></span>
+
+<span class="n">complement_table</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;A&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;T&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;G&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;C&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;C&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;G&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;T&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;A&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;Y&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;R&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;R&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;Y&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;W&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;W&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;S&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;S&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;K&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;M&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;M&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;K&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;D&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;H&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;V&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;B&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;H&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;D&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;B&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;V&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;X&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;X&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;N&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;N&quot;</span><span class="p">,</span><span class="w"></span>
+
+<span class="err">}</span><span class="w"></span>
+
+<span class="n">allowed_aa_transitions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;A&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;G&quot;, &quot;A&quot;, &quot;V&quot;, &quot;L&quot;, &quot;I&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;B&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;D&quot;, &quot;E&quot;, &quot;N&quot;, &quot;Q&quot;, &quot;B&quot;, &quot;Z&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;C&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;S&quot;, &quot;C&quot;, &quot;M&quot;, &quot;T&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;D&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;D&quot;, &quot;E&quot;, &quot;N&quot;, &quot;Q&quot;, &quot;B&quot;, &quot;Z&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;E&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;D&quot;, &quot;E&quot;, &quot;N&quot;, &quot;Q&quot;, &quot;B&quot;, &quot;Z&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;F&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;F&quot;, &quot;Y&quot;, &quot;W&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;G&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;G&quot;, &quot;A&quot;, &quot;V&quot;, &quot;L&quot;, &quot;I&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;H&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;H&quot;, &quot;K&quot;, &quot;R&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;I&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;G&quot;, &quot;A&quot;, &quot;V&quot;, &quot;L&quot;, &quot;I&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="err">#</span><span class="w">     </span><span class="s1">&#39;J&#39;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&#39;J&#39;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;K&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;H&quot;, &quot;K&quot;, &quot;R&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;L&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;G&quot;, &quot;A&quot;, &quot;V&quot;, &quot;L&quot;, &quot;I&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;M&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;S&quot;, &quot;C&quot;, &quot;M&quot;, &quot;T&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;N&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;D&quot;, &quot;E&quot;, &quot;N&quot;, &quot;Q&quot;, &quot;B&quot;, &quot;Z&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="err">#</span><span class="w">     </span><span class="s1">&#39;O&#39;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&#39;O&#39;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;P&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;P&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;Q&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;D&quot;, &quot;E&quot;, &quot;N&quot;, &quot;Q&quot;, &quot;B&quot;, &quot;Z&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;R&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;H&quot;, &quot;K&quot;, &quot;R&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;S&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;S&quot;, &quot;C&quot;, &quot;M&quot;, &quot;T&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;T&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;S&quot;, &quot;C&quot;, &quot;M&quot;, &quot;T&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="ss">&quot;U&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&#39;S&#39;, &#39;C&#39;, &#39;U&#39;, &#39;M&#39;, &#39;T&#39;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;V&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;G&quot;, &quot;A&quot;, &quot;V&quot;, &quot;L&quot;, &quot;I&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;W&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;F&quot;, &quot;Y&quot;, &quot;W&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;X&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;X&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;Y&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;F&quot;, &quot;Y&quot;, &quot;W&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;Z&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;D&quot;, &quot;E&quot;, &quot;N&quot;, &quot;Q&quot;, &quot;B&quot;, &quot;Z&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;.&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;.&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;*&quot;</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;*&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+
+<span class="err">}</span><span class="w"></span>
+
+<span class="n">def</span><span class="w"> </span><span class="n">make_transition_dictionary</span><span class="p">(</span><span class="n">aa_to_codon_extended</span><span class="p">,</span><span class="w"> </span><span class="n">allowed_aa_transitions</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">transition_dictionary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{}</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">aa</span><span class="p">,</span><span class="w"> </span><span class="n">aa_list</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">allowed_aa_transitions</span><span class="p">.</span><span class="n">items</span><span class="p">()</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">codons</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">[]</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="n">aa_element</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nl">aa_list</span><span class="p">:</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">triplets_to_add</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">aa_to_codon_extended</span><span class="o">[</span><span class="n">aa_element</span><span class="o">]</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">codons</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">codons</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">triplets_to_add</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">transition_dictionary</span><span class="o">[</span><span class="n">aa</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">codons</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">transition_dictionary</span><span class="w"></span>
+
+<span class="err">#</span><span class="w"> </span><span class="n">TODO</span><span class="w"> </span><span class="n">rename</span><span class="w"> </span><span class="n">aa_to_codon_extended</span><span class="w"> </span><span class="c1">--&gt; transition_dictionary and references elsewhere</span>
+
+<span class="n">def</span><span class="w"> </span><span class="n">generate_swaptable</span><span class="p">(</span><span class="n">codon_to_aa</span><span class="p">,</span><span class="w"> </span><span class="n">aa_to_codon_extended</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;&quot;&quot;Generate a codon to extended codon dictionary&quot;&quot;&quot;</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">codon_to_codon_extended</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dict</span><span class="p">()</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">codon_to_aa</span><span class="p">.</span><span class="n">items</span><span class="p">()</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">codon_to_codon_extended</span><span class="o">[</span><span class="n">k</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tuple</span><span class="p">(</span><span class="n">aa_to_codon_extended</span><span class="o">[</span><span class="n">v</span><span class="o">]</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">codon_to_codon_extended</span><span class="w"></span>
+
+<span class="n">def</span><span class="w"> </span><span class="n">compare_letters</span><span class="p">(</span><span class="n">letter1</span><span class="p">,</span><span class="w"> </span><span class="n">letter2</span><span class="p">,</span><span class="w"> </span><span class="nc">table</span><span class="o">=</span><span class="n">ambiguity_code_to_nt_set</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;&quot;&quot;Compare two extended nucleotide letters and return True if they match&quot;&quot;&quot;</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">set1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">table</span><span class="o">[</span><span class="n">letter1</span><span class="o">]</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">set2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">table</span><span class="o">[</span><span class="n">letter2</span><span class="o">]</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">set1</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">set2</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">set</span><span class="p">()</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">is_match</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">True</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">else</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">is_match</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">False</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">is_match</span><span class="w"></span>
+</code></pre></div>
+
+
+</details>
+<h2 id="variables">Variables</h2>
+<div class="codehilite"><pre><span></span><code><span class="n">aa_to_codon_extended</span>
+</code></pre></div>
+
+
+<p>Codon to amino acid dictionary, using extended nucleotide letters</p>
+<div class="codehilite"><pre><span></span><code><span class="n">allowed_aa_transitions</span>
+</code></pre></div>
+
+
+<div class="codehilite"><pre><span></span><code><span class="n">ambiguity_code_to_nt_set</span>
+</code></pre></div>
+
+
+<p>Extended nucleotide letter to complement letter dictionary</p>
+<div class="codehilite"><pre><span></span><code><span class="n">codon_extended_to_aa</span>
+</code></pre></div>
+
+
+<p>Extended nucleotide letter to nucleotide letter dictionary</p>
+<div class="codehilite"><pre><span></span><code><span class="n">codon_to_aa</span>
+</code></pre></div>
+
+
+<p>Amino acid to codon dictionary, using extended nucleotide letters</p>
+<div class="codehilite"><pre><span></span><code><span class="n">complement_table</span>
+</code></pre></div>
+
+
+<h2 id="functions">Functions</h2>
+<h3 id="compare_letters">compare_letters</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">compare_letters</span><span class="p">(</span>
+    <span class="n">letter1</span><span class="p">,</span>
+    <span class="n">letter2</span><span class="p">,</span>
+    <span class="n">table</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">},</span> <span class="s1">&#39;G&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;G&#39;</span><span class="p">},</span> <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;C&#39;</span><span class="p">},</span> <span class="s1">&#39;T&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;T&#39;</span><span class="p">},</span> <span class="s1">&#39;Y&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">},</span> <span class="s1">&#39;R&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">},</span> <span class="s1">&#39;W&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">},</span> <span class="s1">&#39;S&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">},</span> <span class="s1">&#39;K&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">},</span> <span class="s1">&#39;M&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">},</span> <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">},</span> <span class="s1">&#39;V&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">},</span> <span class="s1">&#39;H&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">},</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">},</span> <span class="s1">&#39;X&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">},</span> <span class="s1">&#39;N&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">}}</span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+<p>Compare two extended nucleotide letters and return True if they match</p>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><code><span class="n">def</span><span class="w"> </span><span class="n">compare_letters</span><span class="p">(</span><span class="n">letter1</span><span class="p">,</span><span class="w"> </span><span class="n">letter2</span><span class="p">,</span><span class="w"> </span><span class="nc">table</span><span class="o">=</span><span class="n">ambiguity_code_to_nt_set</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;&quot;&quot;Compare two extended nucleotide letters and return True if they match&quot;&quot;&quot;</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">set1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">table</span><span class="o">[</span><span class="n">letter1</span><span class="o">]</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">set2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">table</span><span class="o">[</span><span class="n">letter2</span><span class="o">]</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">set1</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">set2</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">set</span><span class="p">()</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">is_match</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">True</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">else</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">is_match</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">False</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">is_match</span><span class="w"></span>
+</code></pre></div>
+
+
+</details>
+<h3 id="generate_swaptable">generate_swaptable</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">generate_swaptable</span><span class="p">(</span>
+    <span class="n">codon_to_aa</span><span class="p">,</span>
+    <span class="n">aa_to_codon_extended</span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+<p>Generate a codon to extended codon dictionary</p>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><code><span class="n">def</span><span class="w"> </span><span class="n">generate_swaptable</span><span class="p">(</span><span class="n">codon_to_aa</span><span class="p">,</span><span class="w"> </span><span class="n">aa_to_codon_extended</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;&quot;&quot;Generate a codon to extended codon dictionary&quot;&quot;&quot;</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">codon_to_codon_extended</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dict</span><span class="p">()</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">codon_to_aa</span><span class="p">.</span><span class="n">items</span><span class="p">()</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">codon_to_codon_extended</span><span class="o">[</span><span class="n">k</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tuple</span><span class="p">(</span><span class="n">aa_to_codon_extended</span><span class="o">[</span><span class="n">v</span><span class="o">]</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">codon_to_codon_extended</span><span class="w"></span>
+</code></pre></div>
+
+
+</details>
+<h3 id="make_transition_dictionary">make_transition_dictionary</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">make_transition_dictionary</span><span class="p">(</span>
+    <span class="n">aa_to_codon_extended</span><span class="p">,</span>
+    <span class="n">allowed_aa_transitions</span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><code><span class="n">def</span><span class="w"> </span><span class="n">make_transition_dictionary</span><span class="p">(</span><span class="n">aa_to_codon_extended</span><span class="p">,</span><span class="w"> </span><span class="n">allowed_aa_transitions</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">transition_dictionary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{}</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">aa</span><span class="p">,</span><span class="w"> </span><span class="n">aa_list</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">allowed_aa_transitions</span><span class="p">.</span><span class="n">items</span><span class="p">()</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">codons</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">[]</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="n">aa_element</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nl">aa_list</span><span class="p">:</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">triplets_to_add</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">aa_to_codon_extended</span><span class="o">[</span><span class="n">aa_element</span><span class="o">]</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">codons</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">codons</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">triplets_to_add</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">transition_dictionary</span><span class="o">[</span><span class="n">aa</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">codons</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">transition_dictionary</span><span class="w"></span>
+</code></pre></div>
+
+
+</details>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../.." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Home
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../genealloy/" title="Genealloy" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Genealloy
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Powered by
+        <a href="http://timothycrosley.github.io/portray">portray.</a>
+        You too can
+        <a href="http://timothycrosley.github.io/portray">
+          portray</a>
+        your Python project well using automatic documentation.
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.92ffa368.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.5123e3d4.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
