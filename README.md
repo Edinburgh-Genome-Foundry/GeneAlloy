@@ -4,7 +4,7 @@ GeneAlloy
 [![Build Status](https://travis-ci.org/Edinburgh-Genome-Foundry/GeneAlloy.svg?branch=master)](https://travis-ci.org/Edinburgh-Genome-Foundry/GeneAlloy)[![Coverage Status](https://coveralls.io/repos/github/Edinburgh-Genome-Foundry/GeneAlloy/badge.svg?branch=master)](https://coveralls.io/github/Edinburgh-Genome-Foundry/GeneAlloy?branch=master)
 
 <p align="center">
-<img alt="GeneAlloy logo" title="GeneAlloy" src="https://raw.github.com/Edinburgh-Genome-Foundry/GeneAlloy/logo/logo.png" width="150">
+<img alt="GeneAlloy logo" title="GeneAlloy" src="https://raw.githubusercontent.com/Edinburgh-Genome-Foundry/GeneAlloy/master/logo/genealloy.png" width="150">
 </p>
 
 **Genealloy** helps designing *overlapping* sequences.
