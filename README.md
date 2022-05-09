@@ -1,7 +1,7 @@
 GeneAlloy
 =========
 
-[![Build Status](https://travis-ci.org/Edinburgh-Genome-Foundry/GeneAlloy.svg?branch=master)](https://travis-ci.org/Edinburgh-Genome-Foundry/GeneAlloy)[![Coverage Status](https://coveralls.io/repos/github/Edinburgh-Genome-Foundry/GeneAlloy/badge.svg?branch=master)](https://coveralls.io/github/Edinburgh-Genome-Foundry/GeneAlloy?branch=master)
+[![Build Status](https://github.com/Edinburgh-Genome-Foundry/genealloy/actions/workflows/build.yml/badge.svg)](https://github.com/Edinburgh-Genome-Foundry/genealloy/actions/workflows/build.yml)[![Coverage Status](https://coveralls.io/repos/github/Edinburgh-Genome-Foundry/GeneAlloy/badge.svg?branch=master)](https://coveralls.io/github/Edinburgh-Genome-Foundry/GeneAlloy?branch=master)
 
 <p align="center">
 <img alt="GeneAlloy logo" title="GeneAlloy" src="https://raw.githubusercontent.com/Edinburgh-Genome-Foundry/GeneAlloy/master/logo/genealloy.png" width="150">
@@ -15,32 +15,34 @@ It takes two amino acid coding nucleotide sequences and a codon conversion table
 
 In the metallurgic terminology used at the genome foundries, the host sequence (into which the shorter sequence is inserted) is called the *matrix* or *solvent,* and the shorter guest (or parasite) is called the *solute;* and a combination sequence is called a *genealloy.*
 
-
 Install
 -------
 
-    pip install git+https://github.com/Edinburgh-Genome-Foundry/GeneAlloy.git
-
+```bash
+pip install genealloy
+```
 
 Usage
 -----
 
-    import genealloy as ga
-    swaptable = ga.generate_swaptable(ga.codon_to_aa, ga.aa_to_codon_extended)
-    host = 'TCGTCGTACCAGCCGCAGAGGAGAGCTACTTTT'
-    parasite =  'GTACCCGCTGCG'  # frameshift 2
-    ga.make_genealloy(host, parasite, swaptable)
+```python
+import genealloy as ga
+swaptable = ga.generate_swaptable(ga.codon_to_aa, ga.aa_to_codon_extended)
+host = 'TCGTCGTACCAGCCGCAGAGGAGAGCTACTTTT'
+parasite =  'GTACCCGCTGCG'  # frameshift 2
+ga.make_genealloy(host, parasite, swaptable)
+```
 
 Find partial overlaps:
 
-    ga.find_partial_overlaps(host, parasite, swaptable)
-
+```python
+ga.find_partial_overlaps(host, parasite, swaptable)
+```
 
 Version
 -------
 
 The GeneAlloy project uses the [semantic versioning](https://semver.org) scheme. The package is **under development.**
-
 
 License = MIT
 -------------
