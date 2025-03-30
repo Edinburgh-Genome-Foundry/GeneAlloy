@@ -1,4 +1,5 @@
-"""Codon to amino acid dictionary"""
+"""Codon to amino acid dictionary."""
+
 codon_to_aa = {
     "TTT": "F",
     "TTC": "F",
@@ -67,7 +68,7 @@ codon_to_aa = {
 }
 
 
-"""Amino acid to codon dictionary, using extended nucleotide letters"""
+"""Amino acid to codon dictionary, using extended nucleotide letters."""
 aa_to_codon_extended = {
     "A": ["GCX"],
     "B": ["RAY"],
@@ -100,7 +101,7 @@ aa_to_codon_extended = {
 }
 
 
-"""Codon to amino acid dictionary, using extended nucleotide letters"""
+"""Codon to amino acid dictionary, using extended nucleotide letters."""
 codon_extended_to_aa = {
     "GCX": "A",
     "RAY": "B",
@@ -139,7 +140,7 @@ codon_extended_to_aa = {
 }
 
 
-"""Extended nucleotide letter to nucleotide letter dictionary"""
+"""Extended nucleotide letter to nucleotide letter dictionary."""
 ambiguity_code_to_nt_set = {
     "A": {"A"},
     "G": {"G"},
@@ -160,7 +161,7 @@ ambiguity_code_to_nt_set = {
 }
 
 
-"""Extended nucleotide letter to complement letter dictionary"""
+"""Extended nucleotide letter to complement letter dictionary."""
 complement_table = {
     "A": "T",
     "G": "C",
@@ -225,7 +226,7 @@ def make_transition_dictionary(aa_to_codon_extended, allowed_aa_transitions):
 
 # TODO rename aa_to_codon_extended --> transition_dictionary and references elsewhere
 def generate_swaptable(codon_to_aa, aa_to_codon_extended):
-    """Generate a codon to extended codon dictionary"""
+    """Generate a codon to extended codon dictionary."""
     codon_to_codon_extended = dict()
     for k, v in codon_to_aa.items():
         codon_to_codon_extended[k] = tuple(aa_to_codon_extended[v])
@@ -234,7 +235,7 @@ def generate_swaptable(codon_to_aa, aa_to_codon_extended):
 
 
 def compare_letters(letter1, letter2, table=ambiguity_code_to_nt_set):
-    """Compare two extended nucleotide letters and return True if they match"""
+    """Compare two extended nucleotide letters and return True if they match."""
     set1 = table[letter1]
     set2 = table[letter2]
 

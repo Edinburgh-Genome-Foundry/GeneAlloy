@@ -3,8 +3,8 @@ import pytest
 from Bio import SeqIO
 
 import genealloy as ga
-from genealloy.genealloy import get_next_letter
-from genealloy.genealloy import get_letter_in_next_triplet
+from genealloy.GeneAlloy import get_next_letter
+from genealloy.GeneAlloy import get_letter_in_next_triplet
 
 
 def test_convert_seq_to_codons():

@@ -3,12 +3,13 @@ from .codontable import (
     aa_to_codon_extended,
     codon_extended_to_aa,
     ambiguity_code_to_nt_set,
+    complement_table,
     allowed_aa_transitions,
     make_transition_dictionary,
     generate_swaptable,
     compare_letters,
 )
-from .genealloy import (
+from .GeneAlloy import (
     convert_seq_to_codons,
     convert_codonlist_to_tuplelist,
     compare_then_get_letter_recursively,
@@ -21,4 +22,5 @@ from .genealloy import (
     get_reverse_tuplelist,
     get_reverse_complement_tuplelist,
     SeqStep,
+    Duodon,
 )

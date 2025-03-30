@@ -267,7 +267,7 @@ def get_reverse_complement_tuplelist(codon_tuplelist):
 
 
 class Duodon:
-    """Class for storing two triplets"""
+    """Class for storing two triplets."""
 
     def __init__(self, first_triplet, second_triplet):
         self.first_triplet = first_triplet
@@ -275,7 +275,7 @@ class Duodon:
 
 
 class SeqStep:
-    """Class for keeping track of sequence comparison
+    """Class for keeping track of sequence comparison.
 
     It stores a method that aligns a parasite triplet with two consecutive host
     triplets (duodons), a cursor that marks the position of the comparison process,
@@ -286,19 +286,18 @@ class SeqStep:
 
     Parameters
     ----------
-
-    host_tuplelist
+    host_tuplelist : list of tuples
       A list of tuples. Each tuple stores the allowed triplets for a codon
       position of the host sequence.
 
-    parasite_tuplelist
+    parasite_tuplelist : list of tuples
       A list of tuples. Each tuple stores the allowed triplets for a codon
       position of the parasite sequence.
 
-    frameshift
+    frameshift : int
       An integer (0, 1 or 2) denoting the frameshift between host and parasite.
 
-    start_host_codon
+    start_host_codon : int
       The host codon position from which the comparison should start.
     """
 
