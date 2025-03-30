@@ -1,7 +1,7 @@
 GeneAlloy
 =========
 
-[![Build Status](https://github.com/Edinburgh-Genome-Foundry/genealloy/actions/workflows/build.yml/badge.svg)](https://github.com/Edinburgh-Genome-Foundry/genealloy/actions/workflows/build.yml)[![Coverage Status](https://coveralls.io/repos/github/Edinburgh-Genome-Foundry/GeneAlloy/badge.svg?branch=master)](https://coveralls.io/github/Edinburgh-Genome-Foundry/GeneAlloy?branch=master)
+[![Build Status](https://github.com/Edinburgh-Genome-Foundry/genealloy/actions/workflows/build.yml/badge.svg)](https://github.com/Edinburgh-Genome-Foundry/genealloy/actions/workflows/build.yml)
 
 <p align="center">
 <img alt="GeneAlloy logo" title="GeneAlloy" src="https://raw.githubusercontent.com/Edinburgh-Genome-Foundry/GeneAlloy/master/logo/genealloy.png" width="150">
