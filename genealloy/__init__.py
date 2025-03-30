@@ -22,4 +22,3 @@ from .genealloy import (
     get_reverse_complement_tuplelist,
     SeqStep,
 )
-from .version import __version__
